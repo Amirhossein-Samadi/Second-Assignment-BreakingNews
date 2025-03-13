@@ -43,6 +43,10 @@ public class Infrastructure {
             System.out.println("URL: " + url);
             System.out.println("Published At: " + publishedAt);
         }
+
+        public String getTitle() {
+            return title;
+        }
     }
 
 
