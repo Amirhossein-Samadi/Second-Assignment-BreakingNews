@@ -16,6 +16,18 @@ public class Infrastructure {
     private final String JSONRESULT;
     private ArrayList<News> newsList; // TODO: Create the News class
 
+    public class news{
+
+        private String title;
+        private String description;
+        private String sourceName;
+        private String author;
+        private String url;
+        private String publishedAt;
+
+        
+    }
+
 
     public Infrastructure(String APIKEY) {
         this.APIKEY = APIKEY;
