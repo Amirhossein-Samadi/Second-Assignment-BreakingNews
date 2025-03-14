@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class Infrastructure {
 
     private final String URL;
-    private final String APIKEY;
+    private final String APIKEY = "cc18cca7296e4f89b76a9c968909d7e2";
     private final String JSONRESULT;
     private ArrayList<News> newsList; // TODO: Create the News class
 
