@@ -12,7 +12,7 @@ public class News{
     public News() {
     }
 
-    public void setData(String title, String author, String description, String url, String publishedAt) {
+    public void setData(String title, String author, String description, String sourceName, String url, String publishedAt) {
         this.title = title;
         this.author = author;
         this.description = description;

@@ -75,7 +75,7 @@ public class Infrastructure {
                 String sourceName = srcName.get("name").getAsString();
 
                 News news = new News();
-                news.setData(title, author, description,publishedAt, url);
+                news.setData(title, author, description, sourceName, url, publishedAt);
 
                 newsList.add(news);
             }
