@@ -26,6 +26,7 @@ public class Infrastructure {
         this.APIKEY = APIKEY;
         this.URL = "https://newsapi.org/v2/everything?q=tesla&from=" + LocalDate.now().minusDays(1) + "&sortBy=publishedAt&apiKey=";
         this.JSONRESULT = getInformation();
+        parseInformation();
     }
 
     public ArrayList<News> getNewsList() {
