@@ -19,7 +19,7 @@ public class Infrastructure {
     private final String JSONRESULT;
     private ArrayList<News> newsList; // TODO: Create the News class
 
-    public class news{
+    public class News{
 
         private String title;
         private String description;
@@ -28,7 +28,7 @@ public class Infrastructure {
         private String url;
         private String publishedAt;
 
-        public news(String title, String description, String sourceName, String author, String url, String publishedAt) {
+        public News(String title, String description, String sourceName, String author, String url, String publishedAt) {
 
             this.title = title;
             this.description = description;
