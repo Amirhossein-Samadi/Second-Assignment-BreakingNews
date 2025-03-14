@@ -59,20 +59,24 @@ public class Infrastructure {
         //  finally add them to newsList in this class to display them in the output
 
         try {
-            newsList = new ArrayList<>();
+            newsList = new ArrayList<News>();
             JsonObject jsonObject = JsonParser.parseString(JSONRESULT).getAsJsonObject();
             JsonArray articles = jsonObject.getAsJsonArray("articles");
 
-            for (int i = 0; i < articles.size() && i < 20; i++) {
+            for (int i = 0; i < Math.min(articles.size(), 20); i++) {
                 JsonObject article = articles.get(i).getAsJsonObject();
-                News news = new News(
-                        article.get("title").getAsString(),
-                        article.get("description").getAsString(),
-                        article.get("source").getAsJsonObject().get("name").getAsString(),
-                        article.has("author") ? article.get("author").getAsString() : "Unknown",
-                        article.get("url").getAsString(),
-                        article.get("publishedAt").getAsString()
-                );
+                String title = article.get("title").getAsString();
+                String author = article.get("author").getAsString();
+                String description = article.get("description").getAsString();
+                String publishedAt = article.get("publishedAt").getAsString();
+                String url = article.get("url").getAsString();
+
+                JsonObject srcName = article.getAsJsonObject("source");
+                String sourceName = srcName.get("name").getAsString();
+
+                News news = new News();
+                news.setData(title, author, description,publishedAt, url);
+
                 newsList.add(news);
             }
         } catch (Exception e) {
