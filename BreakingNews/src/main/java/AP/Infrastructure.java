@@ -10,6 +10,8 @@ import java.time.LocalDate;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import java.util.Scanner;
+
 
 
 public class Infrastructure {
@@ -114,6 +116,24 @@ public class Infrastructure {
         // TODO: Display titles of the news you got from api
         //  and print them in a way that user can choose one
         //  to see the full information of the news
+
+        while (true)
+        {
+            System.out.println("News Headlines:");
+            for (int i = 0; i < newsList.size(); i++) {
+                System.out.println((i + 1) + ". " + newsList.get(i).getTitle());
+            }
+
+            System.out.print("Enter the number of the article you want to read more about, or 0 to exit: ");
+            int choice = scanner.nextInt();
+            if (choice == 0) {
+                break;
+            } else if (choice > 0 && choice <= newsList.size()) {
+                newsList.get(choice - 1).displayNews();
+            } else {
+                System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 
 }
