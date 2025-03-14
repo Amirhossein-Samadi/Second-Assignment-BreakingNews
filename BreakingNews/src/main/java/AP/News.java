@@ -20,12 +20,12 @@ public class News{
     }
 
     public void displayNews() {
-        System.out.println("Title: " + title);
-        System.out.println("Description: " + description);
-        System.out.println("Source: " + sourceName);
-        System.out.println("Author: " + author);
-        System.out.println("URL: " + url);
-        System.out.println("Published At: " + publishedAt);
+        System.out.println("Title: " + this.title);
+        System.out.println("Description: " + this.description);
+        System.out.println("Source: " + this.sourceName);
+        System.out.println("Author: " + this.author);
+        System.out.println("URL: " + this.url);
+        System.out.println("Published At: " + this.publishedAt);
     }
 
     public String getTitle() {
