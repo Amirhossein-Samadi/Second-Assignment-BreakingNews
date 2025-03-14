@@ -125,6 +125,7 @@ public class Infrastructure {
             }
 
             System.out.print("Enter the number of the article you want to read more about, or 0 to exit: ");
+            Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
             if (choice == 0) {
                 break;
