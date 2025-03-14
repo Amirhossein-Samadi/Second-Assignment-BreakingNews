@@ -87,6 +87,27 @@ public class Infrastructure {
         // TODO: Get the first 20 news from the articles array of the json result
         //  and parse the information of each on of them to be mapped to News class
         //  finally add them to newsList in this class to display them in the output
+
+        try {
+            newsList = new ArrayList<>();
+            JsonObject jsonObject = JsonParser.parseString(JSONRESULT).getAsJsonObject();
+            JsonArray articles = jsonObject.getAsJsonArray("articles");
+
+            for (int i = 0; i < articles.size() && i < 20; i++) {
+                JsonObject article = articles.get(i).getAsJsonObject();
+                News news = new News(
+                        article.get("title").getAsString(),
+                        article.get("description").getAsString(),
+                        article.get("source").getAsJsonObject().get("name").getAsString(),
+                        article.has("author") ? article.get("author").getAsString() : "Unknown",
+                        article.get("url").getAsString(),
+                        article.get("publishedAt").getAsString()
+                );
+                newsList.add(news);
+            }
+        } catch (Exception e) {
+            System.out.println("Exception while parsing: " + e.getMessage());
+        }
     }
 
     public void displayNewsList() {
